@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         
 $sql="UPDATE user set lastlogin= now() where email={$_SESSION['email']} LIMIT 1";
 $result=mysqli_query($conn,$sql);
-if($result){
+if(!$result){
     die('query failed');
 } header("Location: welcome.php");
 		
